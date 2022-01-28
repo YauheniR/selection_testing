@@ -10,8 +10,9 @@ public class ParseProduct {
 
     public static List<Product> parseProductCsv(String filePath) throws IOException {
         //Загружаем строки из файла
-        List<Product> products = new ArrayList<Product>();
+        List<Product> products = new ArrayList<>();
         List<String> fileLines = Files.readAllLines(Paths.get(filePath));
+        fileLines.remove(0);
         for (String fileLine : fileLines) {
             String[] splitedText = fileLine.split(",");
 

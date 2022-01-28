@@ -13,8 +13,9 @@ public class ParseOrderItem {
 
     public static List<OrderItem> parseOrderCsv(String filePath) throws IOException {
         //Загружаем строки из файла
-        List<OrderItem> orders = new ArrayList<OrderItem>();
+        List<OrderItem> orders = new ArrayList<>();
         List<String> fileLines = Files.readAllLines(Paths.get(filePath));
+        fileLines.remove(0);
         for (String fileLine : fileLines) {
             String[] splitedText = fileLine.split(",");
 
